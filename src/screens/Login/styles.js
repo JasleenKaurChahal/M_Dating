@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   imageContainer: {
+    marginTop: 20,
     height: '20%',
     width: '20%',
     justifyContent: 'center',
