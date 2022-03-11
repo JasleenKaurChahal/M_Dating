@@ -14,7 +14,8 @@ This will be a dating app for students of all U-M campuses where they create a p
 ![Simulator Screen Shot - iPhone 11 Pro Max - 2022-03-10 at 19 22 12](https://user-images.githubusercontent.com/40228861/157777755-9f6ad697-3087-4de4-94a9-a844c8b92787.png)
 
 # Home Screen
-![Simulator Screen Shot - iPhone 11 Pro Max - 2022-03-10 at 19 23 07](https://user-images.githubusercontent.com/40228861/157777844-c8757806-ed44-4496-b009-c4194657c88f.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2022-03-10 at 20 43 48](https://user-images.githubusercontent.com/40228861/157785913-cbb3efb2-6690-463c-be2e-7fcda2b4828f.png)
+
 
 # From Validations
 The app has Login, Sign Up and Reset Paswords validation in place as shared in example below:
