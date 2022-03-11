@@ -1,0 +1,123 @@
+import {StyleSheet} from 'react-native';
+
+export const styles = StyleSheet.create({
+  loginContainer: {
+    flex: 1,
+    alignItems: 'center',
+    // justifyContent: 'center',
+    backgroundColor: '#022648',
+    padding: 10,
+    elevation: 10,
+  },
+  textInput: {
+    height: 50,
+    width: '95%',
+    margin: 10,
+    padding: 10,
+    borderColor: '#022648',
+    borderBottomColor: '#F7C505',
+    color: '#F7C505',
+    placeholderTextColor: 'white',
+    borderWidth: StyleSheet.hairlineWidth,
+    label: 'red',
+  },
+  touchButton: {
+    width: '95%',
+  },
+  linearGradient: {
+    borderRadius: 10,
+    marginBottom: 15,
+    padding: 5,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+  },
+  imageContainer: {
+    height: '20%',
+    width: '20%',
+    marginTop: 50,
+    marginBottom: 10,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  Or: {
+    width: 50,
+    textAlign: 'center',
+    color: 'white',
+  },
+  horizontalLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: 'white',
+  },
+  orBlock: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 30,
+    marginTop: 10,
+    width: '95%',
+  },
+  bottomBox: {
+    width: '90%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
+  },
+  parts: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
+  signUp: {
+    color: '#F7C505',
+    fontSize: 16,
+    textDecorationLine: 'underline',
+  },
+  account: {
+    color: 'white',
+    fontSize: 14,
+  },
+  submitButton: {
+    backgroundColor: '#F7C505',
+    height: 50,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  submitText: {
+    fontSize: 15,
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  submitBlock: {
+    width: '96%',
+    margin: 20,
+  },
+  error: {
+    color: 'red',
+    alignSelf: 'flex-start',
+    marginLeft: 15,
+  },
+  forgotPass: {
+    color: '#F7C505',
+    textAlign: 'right',
+    textDecorationLine: 'underline',
+  },
+  block: {width: '50%'},
+  forgotBlock: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginHorizontal: 10,
+  },
+  errorMsg: {color: 'red', width: '50%'},
+  scroll: {backgroundColor: '#022648'},
+});
