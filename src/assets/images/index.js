@@ -8,4 +8,9 @@ export const images = {
   phone: require('./phone.png'),
   apple: require('./apple.png'),
   menu: require('./menu.png'),
+  send: require('./send.webp'),
+  back: require('./back.png'),
+  info: require('./innn.png'),
+  chat: require('./chat.jpeg'),
+  profile: require('./profile.png'),
 };

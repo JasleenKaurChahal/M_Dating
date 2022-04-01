@@ -5,6 +5,7 @@ import Navigation from './src/navigation';
 import {StatusBar} from 'react-native';
 
 const App = () => {
+  console.disableYellowBox = true;
   return (
     <>
       <SafeAreaView style={styles.container}>

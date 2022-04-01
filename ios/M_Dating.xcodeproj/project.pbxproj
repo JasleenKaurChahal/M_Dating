@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		54925C20717D9D9A6F651EB0 /* libPods-M_Dating.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E18C2A071DC3F9F9110232 /* libPods-M_Dating.a */; };
+		59FA945E27F28DD2003D0C6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59FA945D27F28DD2003D0C6B /* GoogleService-Info.plist */; };
 		6945216C0B3D70B1DA1815DE /* libPods-M_Dating-M_DatingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F977805B50CB0911FC15526 /* libPods-M_Dating-M_DatingTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = M_Dating/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = M_Dating/main.m; sourceTree = "<group>"; };
 		4E895F1FCEFD10B884CFA8D8 /* Pods-M_Dating-M_DatingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M_Dating-M_DatingTests.release.xcconfig"; path = "Target Support Files/Pods-M_Dating-M_DatingTests/Pods-M_Dating-M_DatingTests.release.xcconfig"; sourceTree = "<group>"; };
+		59FA945D27F28DD2003D0C6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = M_Dating/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B70A9D29A4480644A9FBCB5A /* Pods-M_Dating-M_DatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M_Dating-M_DatingTests.debug.xcconfig"; path = "Target Support Files/Pods-M_Dating-M_DatingTests/Pods-M_Dating-M_DatingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4E18C2A071DC3F9F9110232 /* libPods-M_Dating.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M_Dating.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				59FA945D27F28DD2003D0C6B /* GoogleService-Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -145,7 +148,6 @@
 				B70A9D29A4480644A9FBCB5A /* Pods-M_Dating-M_DatingTests.debug.xcconfig */,
 				4E895F1FCEFD10B884CFA8D8 /* Pods-M_Dating-M_DatingTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,6 +247,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				59FA945E27F28DD2003D0C6B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
