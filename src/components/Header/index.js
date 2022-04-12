@@ -7,11 +7,11 @@ import {images} from '../../assets/images';
 const Header = ({navigation}) => {
   return (
     <View style={styles.head}>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
         <Image source={images.menu} style={styles.image} resizeMode="contain" />
       </TouchableWithoutFeedback>
       <Text style={styles.heading} />
-      <TouchableWithoutFeedback onPress={() => navigation.navigate('Chat')}>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate('Matches')}>
         <Image
           source={images.chat}
           style={[styles.image, {height: 30}]}

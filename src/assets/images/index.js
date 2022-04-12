@@ -13,4 +13,9 @@ export const images = {
   info: require('./innn.png'),
   chat: require('./chat.jpeg'),
   profile: require('./profile.png'),
+  heart_filled: require('./heart.png'),
+  heart: require('./heart_pink.png'),
+  next: require('./ahead.png'),
+  previous: require('./previous.png'),
+  message_icon: require('./msg.png'),
 };

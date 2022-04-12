@@ -1,0 +1,16 @@
+runtime: nodejs12
+handlers:
+  # Serve all static files with url ending with a file extension
+  - url: /(.*\..+)$
+    static_files: ios/build/\1
+    upload: ios/build/(.*\..+)$
+  # Catch all handler to index.html
+  - url: /.*
+    static_files: ios/build/M_Dating.build
+    upload: ios/build/M_Dating.build
+  - url: /.*
+    static_files: node_modules
+    upload: node_modules
+  - url: /.*
+    static_files: android
+    upload: android
