@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {collection} from 'firebase/firestore';
 import {
   View,
   Text,
@@ -9,237 +10,171 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 import styles from './styles';
 import {images} from '../../assets/images';
 import Header from '../../components/Header';
+import axios from 'axios';
 
 const Home = ({navigation}) => {
-  // const [data, setData] = useState('');
-
   const data = [
     {
       index: 1,
       image: 'https://source.unsplash.com/1024x768/?nature',
-      title: 'hi',
+      title: 'Jane',
       isLiked: false,
     },
     {
       index: 2,
       image: 'https://source.unsplash.com/1024x768/?water',
-      title: 'hi2',
+      title: 'Julia',
       isLiked: true,
     },
     {
       index: 3,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'James',
       isLiked: false,
     },
     {
       index: 4,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'Kate',
       isLiked: false,
     },
     {
       index: 5,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'Shine',
       isLiked: false,
     },
     {
       index: 6,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'Roger',
       isLiked: false,
     },
     {
       index: 7,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'Jazz',
       isLiked: false,
     },
     {
       index: 8,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'Rachel',
       isLiked: false,
     },
     {
       index: 9,
       image: 'https://source.unsplash.com/1024x768/?girl',
-      title: 'hi3',
+      title: 'Marry',
       isLiked: false,
     },
   ];
 
+  let handleClick = event => {
+    // const {BigQuery} = require('@google-cloud/bigquery');
+    // const {BigQuery} = require('@google-cloud/bigquery');
+    // const bigquery = new BigQuery({
+    //   projectId: 'mdating',
+    //   // keyFilename: '../../credentials/(credential file name).json',
+    // });
+    // const query = `
+    // SELECT * FROM \`mdating.profiles.user_profiles\` LIMIT 1000;
+    //     `;
+    // bigquery
+    //   .query(query)
+    //   .then(data => {
+    //     const rows = data[0];
+    //     rows.forEach(row => alert('Hello'));
+    //   })
+    //   .catch(err => console.log(err));
+  };
+
   const [isLiked, setIsLiked] = useState(false);
+  const [name, setName] = useState('User');
+
+  const goForFetch = async () => {
+    setIsLiked(true);
+    await axios({
+      url: 'https://us-central1-mdating.cloudfunctions.net/testName',
+      method: 'POST',
+      params: {
+        name: name,
+      },
+    }).then(response => {
+      return Alert.alert(response.data);
+    });
+  };
 
   const renderItem = ({item, index}) => {
     setIsLiked(item.isLiked);
+    () => setName(item.title);
     return (
-      <View
-        key={index}
-        style={{
-          width: '100%',
-          flex: 1,
-          height: 900,
-          alignSelf: 'center',
-          alignItems: 'center',
-        }}>
+      <View key={index} style={styles.container2}>
         <Image
           resizeMode="cover"
           source={{
             uri: item.image,
           }}
-          style={{
-            height: 400,
-            width: '40%',
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
-            alignSelf: 'flex-start',
-          }}
+          style={styles.photo}
         />
-        <View
-          style={{
-            height: 200,
-            backgroundColor: '#022648',
-            alignSelf: 'flex-start',
-            width: '40%',
-            borderBottomRightRadius: 10,
-            borderBottomLeftRadius: 10,
-            padding: 15,
-          }}>
-          <Text style={{color: '#F7C505', fontSize: 20}}>
-            FirstName LastName
-          </Text>
+        <View style={styles.info}>
+          <Text style={{color: '#F7C505', fontSize: 20}}>{item.title}</Text>
           <Text style={{color: '#F7C505', fontSize: 14}}>20, Student</Text>
-          <Text style={{color: '#F7C505', fontSize: 14}}>{'\n'}shsldkjlsf</Text>
+          <Text style={{color: '#F7C505', fontSize: 14, weight: 'bold'}}>
+            {'\n'}About me:{'\n\n'}
+            {
+              'Mastering the perfect and most authentic Dating app bio is not the easiest of tasks!'
+            }
+          </Text>
         </View>
-        <View
-          style={{
-            height: 50,
-            width: '40%',
-            marginTop: 10,
-            alignSelf: 'flex-start',
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            // alignSelf: 'center',
-          }}>
+        <View style={styles.controls}>
           <Image
             resizeMode="contain"
             source={images.previous}
-            style={{
-              height: 50,
-              width: 50,
-              alignSelf: 'center',
-              // height: 400,
-              // width: '100%',
-              // borderRadius: 10,
-            }}
+            style={styles.back}
           />
-          <TouchableOpacity onPress={() => setIsLiked(!isLiked)}>
+          <TouchableOpacity
+            onPress={() => {
+              goForFetch();
+            }}>
             <Image
               resizeMode="contain"
               source={isLiked ? images.heart_filled : images.heart}
-              style={{
-                height: 60,
-                width: 60,
-                alignSelf: 'center',
-                // height: 400,
-                // width: '100%',
-                // borderRadius: 10,
-              }}
+              style={styles.next}
             />
           </TouchableOpacity>
           <Image
             resizeMode="contain"
             source={images.next}
-            style={{
-              height: 60,
-              width: 60,
-              alignSelf: 'center',
-              // height: 400,
-              // width: '100%',
-              // borderRadius: 10,
-            }}
+            style={styles.next}
           />
         </View>
       </View>
-      // <View
-      //   style={{
-      //     alignItems: 'center',
-      //     height: 400,
-      //     justifyContent: 'center',
-      //   }}>
-      //   {item.image ? (
-      //     <Image
-      //       // resizeMode="contain"
-      //       // source={item.image}
-      //       source={{
-      //         uri: item.image,
-      //       }}
-      //       style={{height: '100%', width: '100%'}}
-      //     />
-      //   ) : (
-      //     <View style={{height: '100%', width: '100%'}}>
-      //       <ActivityIndicator size="small" color="#F7C505" />
-      //     </View>
-      //   )}
-      // </View>
     );
   };
 
   return (
     <View style={{flex: 1}}>
       <Header navigation={navigation} />
-      <ScrollView
-        style={{flex: 1, margin: 15, padding: 20, marginBottom: -200}}>
+      <ScrollView style={{flex: 1, marginBottom: -200}}>
         <Carousel
-          // layout={'tinder'}
-          style={{width: '100%'}}
+          style={{width: '100%', padding: 0, margin: 0}}
           layoutCardOffset={18}
           ref={c => {
             this._carousel = c;
           }}
           data={data}
           renderItem={renderItem}
-          // sliderWidth={Dimensions.get('window').width}
-          // itemWidth={Dimensions.get('window').height}
           sliderWidth={Dimensions.get('window').width}
           itemWidth={Dimensions.get('window').height}
         />
-
-        {/* <View
-          style={{
-            height: 200,
-            backgroundColor: '#022648',
-            margin: 15,
-            borderRadius: 10,
-            padding: 15,
-          }}>
-          <Text style={{color: '#F7C505', fontSize: 20}}>
-            FirstName LastName
-          </Text>
-          <Text style={{color: '#F7C505', fontSize: 14}}>20, Student</Text>
-          <Text style={{color: '#F7C505', fontSize: 14}}>{'\n'}shsldkjlsf</Text>
-        </View>
-
-        <View
-          style={{
-            height: 200,
-            backgroundColor: '#F7C505',
-            margin: 15,
-            borderRadius: 10,
-            padding: 15,
-          }}>
-          <Text style={{color: '#022648', fontSize: 20}}>Description</Text>
-          <Text style={{color: '#022648', fontSize: 14}} />
-          <Text style={{color: '#022648', fontSize: 14}}>{'\n'}shsldkjlsf</Text>
-        </View> */}
       </ScrollView>
     </View>
   );

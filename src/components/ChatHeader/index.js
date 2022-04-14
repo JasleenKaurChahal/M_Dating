@@ -4,7 +4,7 @@ import {View, Image, TouchableWithoutFeedback, Text} from 'react-native';
 import styles from './styles';
 import {images} from '../../assets/images';
 
-const ChatHeader = ({navigation, showInfo}) => {
+const ChatHeader = ({navigation, showInfo, title}) => {
   return (
     <View style={styles.head}>
       <TouchableWithoutFeedback
@@ -13,7 +13,7 @@ const ChatHeader = ({navigation, showInfo}) => {
         }}>
         <Image source={images.back} style={styles.image} resizeMode="contain" />
       </TouchableWithoutFeedback>
-      <Text style={styles.heading}>User</Text>
+      <Text style={styles.heading}>{title ? title : 'User'}</Text>
       {showInfo ? (
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate('Profile')}>

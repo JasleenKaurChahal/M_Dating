@@ -25,7 +25,7 @@ const Login = ({navigation}) => {
       console.log(values);
       setTimeout(() => {
         setLoading(false);
-        navigation.navigate('Home');
+        navigation.navigate('Drawer');
       }, 2000);
     } catch (err) {
       setLoading(false);
